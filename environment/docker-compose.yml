@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  workspace:
+    image: web-node:latest
+    build:
+      context: ./workspace
+    container_name: web-node
+    working_dir: /tinny-docker/web/
+    tty: true
+
+  nginx:
+    image: web-nginx:latest
+    build:
+      context: ./nginx
+    container_name: web-nginx-adonis
+    working_dir: /tinny-docker/web/
+    depends_on:
+      - workspace
+    ports:
+    - 80:80
+    - 443:443
+
+  mysql:
+    image: web-mysql:latest
+    build:
+      context: ./mysql
+    container_name: web-mysql
+    ports:
+    - 3306:3306
