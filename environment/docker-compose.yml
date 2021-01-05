@@ -26,5 +26,21 @@ services:
     build:
       context: ./mysql
     container_name: web-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     ports:
-    - 3306:3306
+      - 3306:3306
+
+    phpmyadmin:
+      image: web-mysql-admin:lastest
+      build:
+        context: ./phpmyadmin
+      container_name: web-mysql-admin
+      restart: always
+      ports:
+        - 8080:80
+      environment:
+        PMA_ARBITRARY=1
