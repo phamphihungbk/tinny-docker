@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="70bd419e-557a-4b10-a030-009e489d159b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/environment/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment/phpmyadmin/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/environment/phpmyadmin/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +28,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/environment" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/environment" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/environment" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -51,6 +62,10 @@
       <option name="presentableId" value="Default" />
       <updated>1609749838368</updated>
       <workItem from="1609749840308" duration="2008000" />
+      <workItem from="1609863579023" duration="738000" />
+      <workItem from="1609913101940" duration="100000" />
+      <workItem from="1610176368638" duration="805000" />
+      <workItem from="1610356465830" duration="286000" />
     </task>
     <servers />
   </component>
@@ -58,9 +73,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="379" y="205" width="670" height="676" key="search.everywhere.popup" timestamp="1609863673844">
-      <screen x="0" y="23" width="1388" height="877" />
+    <state x="283" y="146" key="RollbackChangesDialog" timestamp="1610176506041">
+      <screen x="0" y="23" width="1386" height="877" />
     </state>
+    <state x="283" y="146" key="RollbackChangesDialog/0.23.1386.877@0.23.1386.877" timestamp="1610176506041" />
+    <state x="378" y="205" width="670" height="676" key="search.everywhere.popup" timestamp="1610176491152">
+      <screen x="0" y="23" width="1386" height="877" />
+    </state>
+    <state x="378" y="205" width="670" height="676" key="search.everywhere.popup/0.23.1386.877@0.23.1386.877" timestamp="1610176491152" />
     <state x="379" y="205" width="670" height="676" key="search.everywhere.popup/0.23.1388.877@0.23.1388.877" timestamp="1609863673844" />
   </component>
 </project>
