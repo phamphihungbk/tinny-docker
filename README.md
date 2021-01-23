@@ -5,6 +5,8 @@ What is includes in this repository ?
 - Workspace for NodeJS
 - Nginx reserve proxy
 - Mysql
+- PHPmyadmin
+
 
 How to use:
 

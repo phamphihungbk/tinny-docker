@@ -1,4 +1,4 @@
-FROM phpmyadmin:fpm-alpine
+FROM phpmyadmin/phpmyadmin:latest
 
 RUN echo '' >> /usr/local/etc/php/conf.d/php-phpmyadmin.ini \
  && echo '[PHP]' >> /usr/local/etc/php/conf.d/php-phpmyadmin.ini \
