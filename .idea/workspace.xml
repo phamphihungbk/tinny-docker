@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="70bd419e-557a-4b10-a030-009e489d159b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/environment/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/environment/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment/nginx/config/conf.d/localhost.conf" beforeDir="false" afterPath="$PROJECT_DIR$/environment/nginx/config/conf.d/localhost.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment/phpmyadmin/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/environment/phpmyadmin/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment/nginx/config/conf.d/localhost.conf" beforeDir="false" afterPath="$PROJECT_DIR$/environment/nginx/config/conf.d/localhost-node.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment/nginx/config/conf.d/phpmyadmin.conf" beforeDir="false" afterPath="$PROJECT_DIR$/environment/nginx/config/conf.d/phpmyadmin.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment/workspace/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/environment/workspace-node/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,30 +16,41 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1mb6FOz32aPWbs0xjGgjvSNf16K" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/environment/nginx/config/conf.d" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/environment/nginx/config/conf.d" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/environment" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/deployment/script" />
+      <recent name="$PROJECT_DIR$/config" />
+      <recent name="$PROJECT_DIR$/deployment/modules" />
+      <recent name="$PROJECT_DIR$/deployment" />
       <recent name="$PROJECT_DIR$/environment" />
     </key>
   </component>
@@ -52,6 +66,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -68,22 +83,11 @@
       <workItem from="1610176368638" duration="805000" />
       <workItem from="1610356465830" duration="286000" />
       <workItem from="1610811976278" duration="536000" />
-      <workItem from="1611416133679" duration="264000" />
+      <workItem from="1611416133679" duration="3332000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="283" y="146" key="RollbackChangesDialog" timestamp="1610176506041">
-      <screen x="0" y="23" width="1386" height="877" />
-    </state>
-    <state x="283" y="146" key="RollbackChangesDialog/0.23.1386.877@0.23.1386.877" timestamp="1610176506041" />
-    <state x="378" y="205" width="670" height="676" key="search.everywhere.popup" timestamp="1610176491152">
-      <screen x="0" y="23" width="1386" height="877" />
-    </state>
-    <state x="378" y="205" width="670" height="676" key="search.everywhere.popup/0.23.1386.877@0.23.1386.877" timestamp="1610176491152" />
-    <state x="379" y="205" width="670" height="676" key="search.everywhere.popup/0.23.1388.877@0.23.1388.877" timestamp="1609863673844" />
+    <option name="version" value="3" />
   </component>
 </project>

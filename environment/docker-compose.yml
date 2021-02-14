@@ -7,14 +7,27 @@ networks:
     driver: bridge
 
 services:
-  workspace:
+  workspace-node:
     image: web-node:latest
     build:
-      context: ./workspace
+      context: ./workspace-node
     container_name: web-node
     working_dir: /web
     volumes:
     - ../web:/web
+    tty: true
+    networks:
+      - frontend
+      - backend
+
+  workspace-php:
+    image: web-php:lastest
+    build:
+      context: ./workspace-php
+    container_name: web-php
+    working_dir: /web
+    volumes:
+      - ../web:/web
     tty: true
     networks:
       - frontend
@@ -26,8 +39,6 @@ services:
       context: ./nginx
     container_name: web-nginx
     working_dir: /web
-    depends_on:
-      - workspace
     ports:
     - 80:80
     - 443:443
@@ -45,6 +56,7 @@ services:
       - MYSQL_ROOT_PASSWORD=secret
     volumes:
     - ./mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    - ./mysql/data:/var/lib/mysql
     networks:
       - backend
 
@@ -58,7 +70,6 @@ services:
       - mysql
     environment:
       - PMA_HOST=web-mysql
-      - PMA_ABSOLUTE_URI=http://phpmyadmin.tinydocker.com/
+      - PMA_ABSOLUTE_URI=http://admin.tiny-docker.local/
     networks:
-      - frontend
       - backend
