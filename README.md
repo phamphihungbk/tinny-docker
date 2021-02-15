@@ -1,5 +1,6 @@
 ## Tinny Docker
 
+![alt text](images/logo.)
 #### What's inside this repository
 
 - Workspace for NodeJS
@@ -10,14 +11,20 @@
 - Automated deployment on Service Provider with Terraform (Digital Ocean)
 - Shell script for different environment deployment (local & prod)
 
-#### How to use:
+#### Docker Guidelines :
 
-- Config `tinny-docker.local` on hosts
 - Run make up-node to start container with NodeJS environment
 - Run make up-php to start container with PHP environment
 - Run make build-node to build container with NodeJS environment
 - Run make build-php to build container with PHP environment
 - Run make down to stop container
+- Run make create-db to create a new table on MySQL
+
+#### How to use PHPMyAdmin and access website :
+
+- Config `tinny-docker.local` and `admin.tinny-docker.local` on hosts
+- `tinny-docker.local`: website
+- `admin.tinny-docker.local`: phpmyadmin
 
 #### Terraform Guidelines:
 
