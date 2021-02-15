@@ -7,9 +7,8 @@ What's inside this repository
 - Nginx reserve proxy
 - Mysql
 - PhpMyAdmin
-- Automated deployment on Service Provider with Terraform
-- Shell script for different environment deployment (local & prod)
-- Apache Ant
+- Automated deployment on Service Provider with Terraform (update later)
+- Shell script for different environment deployment (local & prod) (update later)
 
 How to use:
 
