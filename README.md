@@ -1,6 +1,6 @@
 ## Tinny Docker
 
-####What's inside this repository
+#### What's inside this repository
 
 - Workspace for NodeJS
 - Workspace for PHP-FPM
@@ -10,7 +10,7 @@
 - Automated deployment on Service Provider with Terraform (Digital Ocean)
 - Shell script for different environment deployment (local & prod)
 
-####How to use:
+#### How to use:
 
 - Config `tinny-docker.local` on hosts
 - Run make up-node to start container with NodeJS environment
@@ -19,7 +19,7 @@
 - Run make build-php to build container with PHP environment
 - Run make down to stop container
 
-####Terraform Guidelines:
+#### Terraform Guidelines:
 
 After git clone this repo, then replace digital ocean token in `deployment/variable.tf`
 
