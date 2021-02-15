@@ -1,6 +1,6 @@
 ## Tinny Docker
 
-![alt text](images/logo.)
+![alt text](images/logo.jpg)
 #### What's inside this repository
 
 - Workspace for NodeJS
