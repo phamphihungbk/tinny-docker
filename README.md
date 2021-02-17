@@ -6,8 +6,8 @@
 - Workspace for NodeJS
 - Workspace for PHP-FPM
 - Nginx reserve proxy
-- Mysql
-- PhpMyAdmin
+- MySql
+- PHPMyAdmin
 - Automated deployment on Service Provider with Terraform (Digital Ocean)
 - Shell script for different environment deployment (local & prod)
 

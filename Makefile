@@ -13,8 +13,9 @@ build-php: copy-files
 down:
 	docker-compose -f ./environment/docker-compose.yml down --remove-orphans
 
-create-db: copy-files
+create-db:
 	docker exec -it web-mysql sh -c "mysql -u root -p < /docker-entrypoint-initdb.d/createdb.sql"
 
 copy-files:
 	cp ./environment/mysql/docker-entrypoint-initdb.d/createdb.sql.example ./environment/mysql/docker-entrypoint-initdb.d/createdb.sql
+	cp ./config/env.local ./web/env

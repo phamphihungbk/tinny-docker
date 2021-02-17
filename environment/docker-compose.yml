@@ -44,7 +44,6 @@ services:
     - 443:443
     networks:
       - frontend
-      - backend
 
   mysql:
     image: web-mysql:latest
@@ -57,6 +56,7 @@ services:
     volumes:
     - ./mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     - ./mysql/data:/var/lib/mysql
+    - ./mysql/config/my.cnf:/etc/mysql/my.cnf
     networks:
       - backend
 
