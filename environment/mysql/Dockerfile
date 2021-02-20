@@ -1,5 +1,5 @@
 FROM mysql:latest
 
-COPY ./config/my.cnf ./etc/mysql/my.cnf
+COPY ./config/. /etc/mysql/
 
 CMD ["mysqld"]
