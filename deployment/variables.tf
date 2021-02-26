@@ -11,22 +11,27 @@ variable "pvt_key" {
 #Droplet info
 variable "droplet" {
   type = object({
-    image = string
     name = string
     region = string
     size = string
     backups = bool
   })
   default = {
-    image = "ubuntu-18-04-x64"
-    name = "your droplet name"
+    name = "PHP Droplet"
     region = "sgp1"
-    size = "s-1vcpu-1gb"
+    size = "s-2vcpu-2gb"
     backups = false
   }
 }
 
+#Define name of ssh key on Digital Ocean account
 variable "name_public_key" {
   type = string
   default = "public key for all vps"
+}
+
+#Define name of ssh key on Digital Ocean account
+variable "image_name" {
+  type = string
+  default = "centos-7-x64"
 }
