@@ -13,8 +13,11 @@ resource "digitalocean_droplet" "web" {
   region = var.droplet.region
   size   = var.droplet.size
   backups = var.droplet.backups
+  ssh_keys = [
+    data.digitalocean_ssh_key.droplet_ssh_key.id
+  ]
 
   provisioner "local-exec" {
-    command = "bash ./script/prod.sh"
+    command = "/bin/bash ./script/prod.sh"
   }
 }

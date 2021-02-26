@@ -3,11 +3,13 @@ variable "do_token" {
   type = string
   default = ""
 }
+
 #Private from your machine to have connection with created droplet
 variable "pvt_key" {
   type = string
   default = "~/.ssh/id_rsa"
 }
+
 #Droplet info
 variable "droplet" {
   type = object({
@@ -17,7 +19,7 @@ variable "droplet" {
     backups = bool
   })
   default = {
-    name = "PHP Droplet"
+    name = "PHP-Droplet"
     region = "sgp1"
     size = "s-2vcpu-2gb"
     backups = false
@@ -27,10 +29,10 @@ variable "droplet" {
 #Define name of ssh key on Digital Ocean account
 variable "name_public_key" {
   type = string
-  default = "public key for all vps"
+  default = ""
 }
 
-#Define name of ssh key on Digital Ocean account
+#Define name of image will install for Droplet
 variable "image_name" {
   type = string
   default = "centos-7-x64"
