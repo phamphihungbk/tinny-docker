@@ -18,4 +18,4 @@ create-db:
 
 copy-files:
 	cp ./environment/mysql/docker-entrypoint-initdb.d/createdb.sql.example ./environment/mysql/docker-entrypoint-initdb.d/createdb.sql
-	cp ./config/env.local ./web/env
+	cp ./config/env.local ./web/.env

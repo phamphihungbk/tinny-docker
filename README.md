@@ -34,3 +34,9 @@ After git clone this repo, then replace digital ocean token in `deployment/varia
 - Run terraform init to install Terraform dependencies
 - Run terraform plan will show execution plan
 - Run terraform apply to instantiate new droplet
+
+#### Auto Deployment for Wordpress
+
+- Replace DB info inside /config/env.prod
+- Run Terraform to trigger Digital Ocean create new Droplet
+

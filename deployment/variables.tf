@@ -1,7 +1,7 @@
 #Access Token get from Digital Ocean Account
 variable "do_token" {
   type = string
-  default = ""
+  default = "9dae390da02de07df5eb5753fbc83a3f4650021318f6035a00080a84fe306042"
 }
 #Private from your machine to have connection with created droplet
 variable "pvt_key" {
@@ -11,22 +11,15 @@ variable "pvt_key" {
 #Droplet info
 variable "droplet" {
   type = object({
-    image = string
     name = string
     region = string
     size = string
     backups = bool
   })
   default = {
-    image = "ubuntu-18-04-x64"
-    name = "your droplet name"
+    name = "Testing"
     region = "sgp1"
     size = "s-1vcpu-1gb"
     backups = false
   }
-}
-
-variable "name_public_key" {
-  type = string
-  default = "public key for all vps"
 }
