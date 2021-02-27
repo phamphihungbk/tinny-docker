@@ -34,7 +34,7 @@ and ability to deploy just with one click.
 - Run `make terraform-plan` will show execution plan
 - Run `make terraform-apply` to instantiate new droplet
 
-#### How to use PHPMyAdmin and access website:
+#### How to use PHPMyAdmin and access website on Local:
 
 - Config `tinny-docker.local` and `admin.tinny-docker.local` on hosts
 - `tinny-docker.local`: website

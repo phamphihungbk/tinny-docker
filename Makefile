@@ -33,7 +33,7 @@ terraform-plan:
 	terraform -chdir=deployment plan
 
 terraform-apply:
-	terraform -chdir=deployment apply
+	terraform -chdir=deployment apply -auto-approve
 
 terraform-destroy:
-	terraform -chdir=deployment destroy
+	terraform -chdir=deployment destroy -auto-approve

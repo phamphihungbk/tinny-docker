@@ -17,7 +17,24 @@ resource "digitalocean_droplet" "web" {
     data.digitalocean_ssh_key.droplet_ssh_key.id
   ]
 
-  provisioner "local-exec" {
-    command = "bash ./script/prod.sh"
+  connection {
+    host = self.ipv4_address
+    user = "root"
+    type = "ssh"
+    private_key = file(var.private_key)
+    timeout = "1m"
+  }
+
+  provisioner "file" {
+    source      = "./script/prod.sh"
+    destination = "/home/prod.sh"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo chmod +x /home/prod.sh",
+      "bash /home/prod.sh",
+      "rm -f /home/prod.sh /home/Makefile /home/README.md && rm -rf /home/tinny-docker/config && rm -rf /home/tinny-docker/deployment"
+    ]
   }
 }

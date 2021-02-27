@@ -5,7 +5,7 @@ variable "do_token" {
 }
 
 #Private from your machine to have connection with created droplet
-variable "pvt_key" {
+variable "private_key" {
   type = string
   default = "~/.ssh/id_rsa"
 }
