@@ -13,5 +13,5 @@ cp /home/tinny-docker/config/env.prod /home/tinny-docker/web/.env
 
 #Start
 systemctl start docker
-docker-compose -f /home/tinny-docker/environment/docker-compose.yml build workspace-php nginx mysql phpmyadmin
-docker-compose -f /home/tinny-docker/environment/docker-compose.yml up workspace-php nginx mysql phpmyadmin --remove-orphans -d
+docker-compose -f ./environment/docker-compose.yml build -d --remove-orphans workspace-php nginx mysql phpmyadmin
+docker-compose -f /home/tinny-docker/environment/docker-compose.yml up -d --remove-orphans workspace-php nginx mysql phpmyadmin
