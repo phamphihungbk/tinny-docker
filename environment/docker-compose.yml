@@ -70,7 +70,7 @@ services:
     depends_on:
       - mysql
     environment:
-      - PMA_HOST=web-mysql
+      - PMA_HOST=mysql
       - PMA_ABSOLUTE_URI=http://admin.tiny-docker.local/
       - PMA_USER=root
       - PMA_PASSWORD=secret

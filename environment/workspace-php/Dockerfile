@@ -1,5 +1,6 @@
 FROM php:7.3-fpm-stretch
 
+COPY ./config/php-fpm.d/. /usr/local/etc/php-fpm.d
 RUN mkdir -p /web
 
 # Install dependencies

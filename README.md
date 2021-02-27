@@ -1,15 +1,18 @@
 ## Tinny Docker
 
+Like the name itself, just instant image with enough features that gives you simple local develop environment
+and ability to deploy just with one click.
+
 ![alt text](images/logo.jpg)
 #### What's inside this repository
 
 - Workspace for NodeJS
-- Workspace for PHP-FPM
-- Nginx reserve proxy
+- Workspace for PHP
+- Nginx
 - MySql
 - PHPMyAdmin
-- Automated deployment on Service Provider with Terraform (Digital Ocean)
-- Shell script for different environment deployment (local & prod)
+- Automatically deploy on Digital Ocean with Terraform
+- Centralize log with Syslog-ng (upcoming)
 
 #### Folder Structure:
 
@@ -18,14 +21,18 @@
 - environment: contain Dockerfile to initialize docker instances
 - web: will contain your web sourcecode
 
-#### Docker Guidelines:
+#### Available commands (Makefile):
 
-- Run make up-node to start container with NodeJS environment
-- Run make up-php to start container with PHP environment
-- Run make build-node to build container with NodeJS environment
-- Run make build-php to build container with PHP environment
-- Run make down to stop container
-- Run make create-db to create a new table on MySQL
+- Run `make up-node` to start container with NodeJS environment
+- Run `make up-php` to start container with PHP environment
+- Run `make build-node` to build container with NodeJS environment
+- Run `make build-php` to build container with PHP environment
+- Run `make down` to stop container
+- Run `make create-db` to create a new table on MySQL
+- Run `make terraform-validate` to check all Terraform config
+- Run `make terraform-init` to install Terraform dependencies
+- Run `make terraform-plan` will show execution plan
+- Run `make terraform-apply` to instantiate new droplet
 
 #### How to use PHPMyAdmin and access website:
 

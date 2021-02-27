@@ -5,10 +5,12 @@ up-php:
 	docker-compose -f ./environment/docker-compose.yml up -d --remove-orphans workspace-php nginx mysql phpmyadmin
 
 build-node: copy-files
-	docker-compose -f ./environment/docker-compose.yml build -d --remove-orphans workspace-node nginx mysql phpmyadmin
+	cp -R ./environment/nginx/config/node-config/ ./environment/nginx/config/conf.d
+	docker-compose -f ./environment/docker-compose.yml build workspace-node nginx mysql phpmyadmin
 
 build-php: copy-files
-	docker-compose -f ./environment/docker-compose.yml build -d --remove-orphans workspace-php nginx mysql phpmyadmin
+	cp -R ./environment/nginx/config/php-config/ ./environment/nginx/config/conf.d
+	docker-compose -f ./environment/docker-compose.yml build workspace-php nginx mysql phpmyadmin
 
 down:
 	docker-compose -f ./environment/docker-compose.yml down --remove-orphans
