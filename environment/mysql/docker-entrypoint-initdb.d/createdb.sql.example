@@ -17,7 +17,7 @@
 #
 
 CREATE USER IF NOT EXISTS 'tinny-docker-user' IDENTIFIED BY 'tinny-docker-password';
-CREATE DATABASE IF NOT EXISTS `tinny-db` COLLATE 'utf8_general_ci';
+CREATE DATABASE IF NOT EXISTS `tinny-docker-db` COLLATE 'utf8_general_ci';
 GRANT ALL PRIVILEGES ON `tinny-docker-db`.* TO 'tinny-docker-user'@'%';
 
 FLUSH PRIVILEGES ;

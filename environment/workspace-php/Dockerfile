@@ -1,7 +1,9 @@
 FROM php:7.3-fpm-stretch
 
-COPY ./config/php-fpm.d/. /usr/local/etc/php-fpm.d
-RUN mkdir -p /web
+COPY ./config/. /usr/local/etc/
+RUN mkdir -p /web \
+    mkdir -p /var/log/fpm \
+    && chmod 755 -R /var/log
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -15,13 +17,14 @@ RUN apt-get update && apt-get install -y \
     vim \
     unzip \
     git \
-    curl
+    curl \
+    iputils-ping
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install extensions
-RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl
+RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl mysqli
 RUN docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/
 RUN docker-php-ext-install gd
 

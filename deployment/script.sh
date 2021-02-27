@@ -11,7 +11,11 @@ chmod +x /usr/local/bin/docker-compose
 cd /home && git clone "https://github.com/phamphihungbk/tinny-docker.git"
 cp /home/tinny-docker/config/env.prod /home/tinny-docker/web/.env
 
-#Start
+#Start container
 systemctl start docker
 docker-compose -f ./environment/docker-compose.yml build -d --remove-orphans workspace-php nginx mysql phpmyadmin
 docker-compose -f /home/tinny-docker/environment/docker-compose.yml up -d --remove-orphans workspace-php nginx mysql phpmyadmin
+
+#Instantiate DB info and install php packages
+docker exec -it tinny-mysql sh -c "mysql -u root < /docker-entrypoint-initdb.d/createdb.sql"
+docker exec -it tinny-php sh -c "composer install"
