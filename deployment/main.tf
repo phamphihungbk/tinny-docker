@@ -18,6 +18,6 @@ resource "digitalocean_droplet" "web" {
   ]
 
   provisioner "local-exec" {
-    command = "/bin/bash ./script/prod.sh"
+    command = "bash ./script/prod.sh"
   }
 }

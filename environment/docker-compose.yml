@@ -8,10 +8,10 @@ networks:
 
 services:
   workspace-node:
-    image: web-node:latest
+    image: tinny-node
     build:
       context: ./workspace-node
-    container_name: web-node
+    container_name: tinny-node
     working_dir: /web
     volumes:
     - ../web:/web
@@ -21,10 +21,10 @@ services:
       - backend
 
   workspace-php:
-    image: web-php:lastest
+    image: tinny-php
     build:
       context: ./workspace-php
-    container_name: web-php
+    container_name: tinny-php
     working_dir: /web
     volumes:
       - ../web:/web
@@ -34,11 +34,13 @@ services:
       - backend
 
   nginx:
-    image: web-nginx:latest
+    image: tinny-nginx
     build:
       context: ./nginx
-    container_name: web-nginx
+    container_name: tinny-nginx
     working_dir: /web
+    volumes_from:
+      - workspace-php
     ports:
     - 80:80
     - 443:443
@@ -46,10 +48,10 @@ services:
       - frontend
 
   mysql:
-    image: web-mysql:latest
+    image: tinny-mysql
     build:
       context: ./mysql
-    container_name: web-mysql
+    container_name: tinny-mysql
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=secret
@@ -60,10 +62,10 @@ services:
       - backend
 
   phpmyadmin:
-    image: web-mysql-admin:lastest
+    image: tinny-mysql-admin
     build:
       context: ./phpmyadmin
-    container_name: web-mysql-admin
+    container_name: tinny-mysql-admin
     restart: always
     depends_on:
       - mysql
@@ -73,4 +75,5 @@ services:
       - PMA_USER=root
       - PMA_PASSWORD=secret
     networks:
+      - frontend
       - backend
