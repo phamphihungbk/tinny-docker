@@ -15,6 +15,7 @@ services:
     working_dir: /web
     volumes:
     - ../web:/web
+    - ../.env:/web/.env
     tty: true
     networks:
       - frontend
@@ -28,6 +29,7 @@ services:
     working_dir: /web
     volumes:
       - ../web:/web
+      - ../.env:/web/.env
     tty: true
     networks:
       - frontend
@@ -71,7 +73,7 @@ services:
       - mysql
     environment:
       - PMA_HOST=mysql
-      - PMA_ABSOLUTE_URI=http://admin.tiny-docker.local/
+      - PMA_ABSOLUTE_URI="${PHP_MY_ADMIN_DOMAIN}"
       - PMA_USER=root
       - PMA_PASSWORD=secret
     networks:

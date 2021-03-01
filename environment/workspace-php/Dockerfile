@@ -1,6 +1,7 @@
 FROM php:7.3-fpm-stretch
 
 COPY ./config/. /usr/local/etc/
+
 RUN mkdir -p /web \
     mkdir -p /var/log/fpm \
     && chmod 755 -R /var/log

@@ -1,8 +1,8 @@
 up-node:
-	docker-compose -f ./environment/docker-compose.yml up -d --remove-orphans workspace-node nginx mysql phpmyadmin
+	docker-compose -f ./environment/docker-compose.yml --env-file ../.env up -d --remove-orphans workspace-node nginx mysql phpmyadmin
 
 up-php:
-	docker-compose -f ./environment/docker-compose.yml up -d --remove-orphans workspace-php nginx mysql phpmyadmin
+	docker-compose -f ./environment/docker-compose.yml --env-file ../.env up -d --remove-orphans workspace-php nginx mysql phpmyadmin
 	docker exec -it tinny-php sh -c "composer install"
 
 build-node: copy-files
@@ -21,7 +21,7 @@ create-db:
 
 copy-files:
 	cp ./environment/mysql/docker-entrypoint-initdb.d/createdb.sql.example ./environment/mysql/docker-entrypoint-initdb.d/createdb.sql
-	cp ./config/env.local ./web/.env
+	cp ./config/env.local ./.env
 
 terraform-validate:
 	terraform -chdir=deployment validate
