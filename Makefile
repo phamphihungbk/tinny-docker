@@ -7,11 +7,11 @@ up-php:
 
 build-node: copy-files
 	cp -R ./environment/nginx/config/node-config/ ./environment/nginx/config/conf.d
-	docker-compose -f ./environment/docker-compose.yml build workspace-node nginx mysql phpmyadmin
+	docker-compose -f ./environment/docker-compose.yml --env-file ../.env build workspace-node nginx mysql phpmyadmin
 
 build-php: copy-files
 	cp -R ./environment/nginx/config/php-config/ ./environment/nginx/config/conf.d
-	docker-compose -f ./environment/docker-compose.yml build workspace-php nginx mysql phpmyadmin
+	docker-compose -f ./environment/docker-compose.yml --env-file ../.env build workspace-php nginx mysql phpmyadmin
 
 down:
 	docker-compose -f ./environment/docker-compose.yml down --remove-orphans
