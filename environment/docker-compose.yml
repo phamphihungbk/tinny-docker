@@ -79,3 +79,18 @@ services:
     networks:
       - frontend
       - backend
+
+  syslog-ng:
+    image: tinny-syslog-ng
+    build:
+      context: ./syslog-ng
+    container_name: tinny-syslog-ng
+    volumes:
+      - ../logs/nginx:/var/log/nginx
+      - ../logs/fpm:/var/log/fpm
+    environment:
+      SYSLOG_DRIVER: file
+    networks:
+      - frontend
+      - backend
+    command: "--no-caps"
