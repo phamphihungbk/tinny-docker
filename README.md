@@ -1,7 +1,7 @@
 ## Tinny Docker
 
-Like the name itself, just instant image with enough features that gives you simple local develop environment
-and ability to deploy just with one click.
+It's my personal project. I implemented some instant Docker image and Terraform script. 
+By using it users can easily to deploy their codebase from local to server with just one command.
 
 ![alt text](images/logo.jpg)
 #### What's inside this repository
