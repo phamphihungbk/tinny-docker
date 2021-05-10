@@ -28,7 +28,7 @@ By using it users can easily to deploy their codebase from local to server with 
 - Run `make build-node` to build container with NodeJS environment
 - Run `make build-php` to build container with PHP environment
 - Run `make down` to stop container
-- Run `make create-db` to create a new table on MySQL
+- Run `make db-create` to create a new table on MySQL
 - Run `make terraform-validate` to check all Terraform config
 - Run `make terraform-init` to install Terraform dependencies
 - Run `make terraform-plan` will show execution plan
@@ -53,3 +53,6 @@ After git clone this repo, then replace digital ocean token and ssh key in `depl
 
 - Replace DB info inside /config/env.prod
 - Run Terraform to trigger Digital Ocean create new Droplet
+
+#### Reference Documents:
+- https://www.syslog-ng.com/technical-documents/doc/syslog-ng-open-source-edition/3.16/administration-guide/57

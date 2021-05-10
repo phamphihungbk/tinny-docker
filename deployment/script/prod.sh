@@ -15,7 +15,7 @@ cp /home/tinny-docker/config/env.prod /home/tinny-docker/.env
 systemctl start docker
 cd /home/tinny-docker
 docker-compose -f ./environment/docker-compose.yml build -d --remove-orphans workspace-php nginx mysql phpmyadmin
-docker-compose -f ./environment/docker-compose.yml --env-file ../.env up -d --remove-orphans workspace-php nginx mysql phpmyadmin
+docker-compose -f ./environment/docker-compose.yml --env-file .env up -d --remove-orphans workspace-php nginx mysql phpmyadmin syslog-ng
 
 #Instantiate DB info and install php packages
 docker exec -it tinny-mysql sh -c "mysql -u root < /docker-entrypoint-initdb.d/createdb.sql"
