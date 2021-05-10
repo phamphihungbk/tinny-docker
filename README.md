@@ -12,7 +12,7 @@ By using it users can easily to deploy their codebase from local to server with 
 - MySql
 - PHPMyAdmin
 - Automatically deploy on Digital Ocean with Terraform
-- Centralize log with Syslog-ng (upcoming)
+- Centralize log with Syslog-ng
 
 #### Folder Structure:
 
