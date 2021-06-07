@@ -21,6 +21,20 @@ services:
       - frontend
       - backend
 
+  workspace-python:
+    image: tinny-python
+    build:
+      context: ./workspace-python
+    container_name: tinny-python
+    working_dir: /web
+    volumes:
+      - ../web:/web
+      - ../.env:/web/.env
+    tty: true
+    networks:
+      - frontend
+      - backend
+
   workspace-php:
     image: tinny-php
     build:

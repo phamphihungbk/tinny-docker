@@ -2,6 +2,10 @@
 up-node:
 	docker-compose -f ./environment/docker-compose.yml --env-file .env up -d --remove-orphans workspace-node nginx mysql phpmyadmin
 
+.PHONY: up-python ## docker up python env
+up-python:
+	docker-compose -f ./environment/docker-compose.yml --env-file .env up -d --remove-orphans workspace-python
+
 .PHONY: up-php ## docker up php env
 up-php:
 	docker-compose -f ./environment/docker-compose.yml --env-file .env up -d --remove-orphans workspace-php nginx mysql phpmyadmin syslog-ng
@@ -11,6 +15,10 @@ up-php:
 build-node: copy-files
 	cp -R ./environment/nginx/config/node-config/ ./environment/nginx/config/conf.d
 	docker-compose -f ./environment/docker-compose.yml --env-file .env build workspace-node nginx mysql phpmyadmin
+
+.PHONY: build-python ## docker build python env
+build-python: copy-files
+	docker-compose -f ./environment/docker-compose.yml --env-file .env build workspace-python
 
 .PHONY: build-php ## docker build php env
 build-php: copy-files
