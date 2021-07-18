@@ -1,58 +1,45 @@
 ## Tinny Docker
 
-It's my personal project. I implemented some instant Docker image and Terraform script. 
-By using it users can easily to deploy their codebase from local to server with just one command.
-
 ![alt text](images/logo.jpg)
-#### What's inside this repository
 
+I implemented some instant Docker image and Terraform script.
+By using it you can easily to deploy your codebase from local to server with just one command.
+
+## Features:
+
+```txt
 - Workspace for NodeJS
 - Workspace for PHP
+- Workspace for Python
 - Nginx
 - MySql
-- PHPMyAdmin
-- Automatically deploy on Digital Ocean with Terraform
-- Centralize log with Syslog-ng
+- Phpmyadmin
+- Quickly deploy with Terraform
+- Centralize logs with Syslog-ng
+```
 
-#### Folder Structure:
+## Folder Structure:
 
-- config: contain env file
-- deployment: contain Terraform script for automatic deployment
-- environment: contain Dockerfile to initialize docker instances
-- web: will contain your web sourcecode
+```bash
+├── config                     # contains env files for different environments
+├── deloyment                  # contains Terraform scripts that supports for deployment
+├── environment                # contains Dockerfile
+└── web                        # where to put web sourcecode (example: Wordpress)
+```
 
-#### Available commands (Makefile):
+## Available commands (Makefile):
 
-- Run `make up-node` to start container with NodeJS environment
-- Run `make up-php` to start container with PHP environment
-- Run `make build-node` to build container with NodeJS environment
-- Run `make build-php` to build container with PHP environment
-- Run `make down` to stop container
-- Run `make db-create` to create a new table on MySQL
-- Run `make terraform-validate` to check all Terraform config
-- Run `make terraform-init` to install Terraform dependencies
-- Run `make terraform-plan` will show execution plan
-- Run `make terraform-apply` to instantiate new droplet
-
-#### How to use PHPMyAdmin and access website on Local:
-
-- Config `tinny-docker.local` and `admin.tinny-docker.local` on hosts
-- `tinny-docker.local`: website
-- `admin.tinny-docker.local`: phpmyadmin
-
-#### Terraform Guidelines:
-
-After git clone this repo, then replace digital ocean token and ssh key in `deployment/variable.tf`
-
-- Run `make terraform-validate` to check all Terraform config
-- Run `make terraform-init` to install Terraform dependencies
-- Run `make terraform-plan` will show execution plan
-- Run `make terraform-apply` to instantiate new droplet
-
-#### Auto Deployment for Wordpress:
-
-- Replace DB info inside /config/env.prod
-- Run Terraform to trigger Digital Ocean create new Droplet
-
-#### Reference Documents:
-- https://www.syslog-ng.com/technical-documents/doc/syslog-ng-open-source-edition/3.16/administration-guide/57
+```txt
+- Run make up-node to start container with NodeJS environment
+- Run make up-php to start container with PHP environment
+- Run make up-python to start container with Python environment
+- Run make build-node to build container with NodeJS environment
+- Run make build-php to build container with PHP environment
+- Run make build-python to build container with Python environment
+- Run make down to stop container
+- Run make db-create to create a new table on MySQL
+- Run make terraform-validate to check all Terraform config
+- Run make terraform-init to install Terraform dependencies
+- Run make terraform-plan will show execution plan
+- Run make terraform-apply to instantiate new droplet
+```
