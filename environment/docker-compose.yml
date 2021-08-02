@@ -107,3 +107,18 @@ services:
     networks:
       - frontend
     command: "--no-caps"
+
+  postgres:
+    image: tinny-postgres
+    build:
+      context: ./postgres
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+      - ./postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    restart: always
+    container_name: tinny-postgres
+    environment:
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    networks:
+      - backend
